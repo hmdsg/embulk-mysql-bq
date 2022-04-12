@@ -1,1 +1,4 @@
 # embulk-mysql-bq
+
+MysqlからBigQueryにデータをエクスポートするembulkをCloodRun上で実行するための環境
+CloudBuildを使用してデプロイする。
