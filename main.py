@@ -19,7 +19,7 @@ def exec_embulk():
         print(e.stdout)
         print(e.stderr)
         result = e.stdout
-        print ("error!", res, result)
+        print ("error!")
 
     return result
 
