@@ -8,12 +8,26 @@ app = Flask(__name__)
 
 @app.route("/")
 def return_main():
+    print("start exec")
     result = exec_embulk()
-    return result
+    print("end exec")
+
+    return "ok"
 
 def exec_embulk():
-        res = subprocess.run("embulk -v", shell=True, check=True, capture_output=True, text=True)
+    try:
+        res = subprocess.run("embulk --version", shell=True, check=True, capture_output=True, text=True)
         result = res.stdout
+        print (result)
+    except subprocess.CalledProcessError as e:
+        print ("error!")
+        print(e.cmd)
+        print(e.returncode)
+        print(e.output)
+        print(e.stdout)
+        print(e.stderr)
+        result = e.stdout
+
     return result
 
 
