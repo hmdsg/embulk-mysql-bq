@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import os
 import subprocess
 
@@ -8,7 +9,6 @@ app = Flask(__name__)
 @app.route("/")
 def exec_embulk():
     try:
-        # 実行したいembulkコマンドを記述
         res = subprocess.run(["embulk", "-v"], check=True, capture_output=True, text=True)
         result = res.stdout
     except subprocess.CalledProcessError as e:
