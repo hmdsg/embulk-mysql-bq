@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def exec_embulk():
     try:
-        res = subprocess.run(["ls"], shell=False, check=True, capture_output=True, text=True)
+        res = subprocess.run(["embulk -v", shell=True, check=True, capture_output=True, text=True)
         result = res.stdout
     except subprocess.CalledProcessError as e:
         print(e.cmd)
