@@ -12,7 +12,7 @@ def return_main():
     result = exec_embulk()
     print("end exec")
 
-    return result
+    return "ok"
 
 def exec_embulk():
     try:
