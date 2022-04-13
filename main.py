@@ -11,6 +11,7 @@ def exec_embulk():
     try:
         res = subprocess.run("embulk -v", shell=True, check=True, capture_output=True, text=True)
         result = res.stdout
+        print (res, result)
     except subprocess.CalledProcessError as e:
         print(e.cmd)
         print(e.returncode)
@@ -18,6 +19,7 @@ def exec_embulk():
         print(e.stdout)
         print(e.stderr)
         result = e.stdout
+        print ("error!", res, result)
 
     return result
 
