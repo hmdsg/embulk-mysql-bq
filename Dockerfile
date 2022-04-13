@@ -12,7 +12,7 @@ RUN apt update && \
 # Install production dependencies.
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# install java 8
+# install java8 jdk
 RUN apt install -y wget software-properties-common apt-transport-https gnupg && \
     wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - && \
     add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
